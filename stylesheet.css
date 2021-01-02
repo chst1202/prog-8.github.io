@@ -1,10 +1,21 @@
 header{
   height:65px;
-  width:100%;
+  background-color: #222222;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+.heading{
+  width:670px;
+}
+.btn-menu{
+  pading:5px;
+  float:right;
 }
 .fa{
   margin-right:5px;
 }
 .fa-bars{
   background-color: #222222;
+  color:#fff;
 }
