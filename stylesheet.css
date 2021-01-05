@@ -24,56 +24,104 @@ header{
   font-size:3em;
   color:#fff;
 }
-.menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 100%;
-  background-color: pink;
-  transition: width .2s;
+@media (max-width:767px){
+  .nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 初期：非表示 */
+    visibility: hidden;
+    opacity: 0;
+    /* ふわっと表示 */
+    transition: 0.5s ease-in-out;
+  }
+  .nav ul{
+    list-style:none;
+  }
+  .nav li:not(:last-child){
+    margin-bottom: 30px;
+  }
+  .nav a{
+    color: #ffffff;
+  }
 }
-
-.menu--isOpen {
-  width: 40vw;
-}
-
-.menu__button {
+/* ナビゲーションボタン（開く） */
+#navbtn{
   position: fixed;
-  right: 10px;
-  top: 10px;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(200, 200, 230, .7);
-  border-radius: 5px;
+  top: 15px;
+  right: 15px;
+  padding: 0;
+  outline: none;
   border: none;
+  background: none;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
 }
 
-.menu span {
+#navbtn::before,
+#navbtn::after{
+  content : '';
   display: block;
-  width: 80%;
-  margin: auto;
-  height: 4px;
-  background-color: #000;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: calc((100% - 4px)/2);
-  border-radius: 3px;
-  transition: .2s;
-}
-.menu__lineTop {
-  transform: translateY(-10px);
-}
-.menu__lineBottom {
+  height: 1px;
+  background-color: #333333;
   transform: translateY(10px);
+  transition: 0.3s ease-in-out;
 }
-.menu--isOpen .menu__lineTop {
-  transform: rotate(45deg);
+
+#navbtn::before{
+  transform: translateY(-10px);
+  box-shadow: 0 10px #333333;
 }
-.menu--isOpen .menu__lineMiddle {
-  opacity: 0;
+
+/* ナビゲーションボタン（閉じる） */
+.open #navbtn{
+  z-index: 100;
 }
-.menu--isOpen .menu__lineBottom {
+.open #navbtn::before{
   transform: rotate(-45deg);
+  box-shadow: none;
+}
+.open #navbtn::after{
+  transform: rotate(45deg);
+  box-shadow: none;
+}
+/* ナビゲーションメニュー 開いた時*/
+.open .nav{
+  visibility: visible;
+  opacity: 1;
+}
+
+@media(min-width: 768px){
+  /* PCではボタン非表示 */
+  #navbtn{
+    display:none;
+  }
+  /* ヘッダーは横並び */
+  header{
+    display: flex;
+    align-items: center;
+  }
+  /* メニューを右に寄せる */
+  .nav{
+    /* 右寄せ */
+    margin-left: auto;
+  }
+  .nav ul{
+    display: flex;
+    list-style:none
+  }
+  .nav ul li:not(:first-child){
+    margin-left:20px;
+  }
+  .nav ul li a { 
+    color: #000000;
+  }
 }
