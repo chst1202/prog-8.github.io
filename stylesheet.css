@@ -1,21 +1,79 @@
 header{
-  height:65px;
-  background-color: #222222;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background-image: url("https://instagram.fkix2-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/134807746_857528731681276_8299311536300217975_n.jpg?_nc_ht=instagram.fkix2-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=DhbF8kcoja4AX_f0sNV&tp=1&oh=7a2a637f82c893fe0a5b4dcb306ddefe&oe=601BB7D0");
+  background-repeat:  no-repeat;
+  background-size:cover;
+  background-position:center bottom;
+  height:350px;
+  opacity:0.9;
+  position:fixed;
 
+  z-index:10;
 }
 .heading{
   width:670px;
 }
 .btn-menu{
-  pading:5px;
+  padding:7PX 10px;
   float:right;
 }
-.fa{
-  margin-right:5px;
+.btn  {
+  font-family: FontAwesome;
+  content: "\f0c9";
 }
-.fa-bars{
-  background-color: #222222;
+.menu{
+  font-size:3em;
   color:#fff;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background-color: pink;
+  transition: width .2s;
+}
+
+.menu--isOpen {
+  width: 40vw;
+}
+
+.menu__button {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(200, 200, 230, .7);
+  border-radius: 5px;
+  border: none;
+}
+
+.menu span {
+  display: block;
+  width: 80%;
+  margin: auto;
+  height: 4px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc((100% - 4px)/2);
+  border-radius: 3px;
+  transition: .2s;
+}
+.menu__lineTop {
+  transform: translateY(-10px);
+}
+.menu__lineBottom {
+  transform: translateY(10px);
+}
+.menu--isOpen .menu__lineTop {
+  transform: rotate(45deg);
+}
+.menu--isOpen .menu__lineMiddle {
+  opacity: 0;
+}
+.menu--isOpen .menu__lineBottom {
+  transform: rotate(-45deg);
 }
