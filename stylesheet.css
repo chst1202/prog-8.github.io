@@ -1,4 +1,4 @@
-header{
+/* header{
   background-image: url("https://instagram.fkix2-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/134807746_857528731681276_8299311536300217975_n.jpg?_nc_ht=instagram.fkix2-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=DhbF8kcoja4AX_f0sNV&tp=1&oh=7a2a637f82c893fe0a5b4dcb306ddefe&oe=601BB7D0");
   background-repeat:  no-repeat;
   background-size:cover;
@@ -23,7 +23,7 @@ header{
 .menu{
   font-size:3em;
   color:#fff;
-}
+} */
 @media (max-width:767px){
   .nav{
     position: fixed;
